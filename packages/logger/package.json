@@ -1,0 +1,15 @@
+{
+  "name": "@verdaccio/logger",
+  "version": "4.4.0",
+  "description": "logger",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bunyan": "1.8.12"
+  },
+  "devDependencies": {
+    "@types/bunyan": "1.8.6"
+  }
+}

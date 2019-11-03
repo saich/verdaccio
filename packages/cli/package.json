@@ -1,0 +1,9 @@
+{
+  "name": "@verdaccio/cli",
+  "version": "4.4.0",
+  "description": "verdaccio CLI",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

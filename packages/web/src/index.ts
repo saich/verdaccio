@@ -1,4 +1,2 @@
-import loaders from '@verdaccio/loaders';
-
-
-console.log("--->", loaders);
+export * from './web-api';
+export * from './render-web';

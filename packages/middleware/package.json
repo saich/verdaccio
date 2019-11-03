@@ -1,0 +1,12 @@
+{
+  "name": "@verdaccio/middleware",
+  "version": "4.4.0",
+  "description": "loaders logic",
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@verdaccio/dev-types": "*"
+  }
+}

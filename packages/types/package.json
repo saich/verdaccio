@@ -1,0 +1,12 @@
+{
+  "name": "@verdaccio/dev-types",
+  "version": "4.4.0",
+  "description": "types for verdaccio local dev",
+  "main": "./index.ts",
+  "dependencies": {
+    "@verdaccio/loaders": "4.4.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
