@@ -1,7 +1,3 @@
-/**
- * @prettier
- */
-
 export default function(route, auth, storage): void {
   // searching packages
   route.get('/-/all(/since)?', function(req, res) {

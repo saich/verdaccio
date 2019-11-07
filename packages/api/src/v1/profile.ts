@@ -1,7 +1,6 @@
 import _ from 'lodash';
-import { API_ERROR, APP_ERROR, HTTP_STATUS, SUPPORT_ERRORS } from '@verdaccio/dev-commons/src/constants';
-import { ErrorCode } from '@verdaccio/utils/src/utils';
-import { validatePassword } from '../../../utils/src/auth-utils';
+import { API_ERROR, APP_ERROR, HTTP_STATUS, SUPPORT_ERRORS } from '@verdaccio/dev-commons';
+import { ErrorCode, validatePassword } from '@verdaccio/utils';
 
 import { Response, Router } from 'express';
 import { $NextFunctionVer, $RequestExtend, IAuth } from '@verdaccio/dev-types';

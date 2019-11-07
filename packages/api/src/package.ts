@@ -1,9 +1,10 @@
 import _ from 'lodash';
-import { allow } from '../../middleware/src/middleware';
-import { convertDistRemoteToLocalTarballUrls, getVersion, ErrorCode } from '@verdaccio/utils/src/utils';
-import { HEADERS, DIST_TAGS, API_ERROR } from '@verdaccio/dev-commons/src/constants';
+import { allow } from '@verdaccio/middleware';
+import { convertDistRemoteToLocalTarballUrls, getVersion, ErrorCode } from '@verdaccio/utils';
+import { HEADERS, DIST_TAGS, API_ERROR } from '@verdaccio/dev-commons';
 import { Router } from 'express';
 import { Config, Package } from '@verdaccio/types';
+
 import { IAuth, $ResponseExtend, $RequestExtend, $NextFunctionVer, IStorageHandler } from '../../types';
 
 const downloadStream = (packageName: string, filename: string, storage: any, req: $RequestExtend, res: $ResponseExtend): void => {

@@ -1,10 +1,9 @@
-// @flow
-
-import { USERS, HTTP_STATUS } from '@verdaccio/dev-commons/src/constants';
+import { USERS, HTTP_STATUS } from '@verdaccio/dev-commons';
 import {Response} from 'express';
-import {$RequestExtend, $NextFunctionVer, IStorageHandler} from '../../types';
 import _ from 'lodash';
-import { logger } from '../../logger/src/logger';
+import { logger } from '@verdaccio/logger';
+
+import {$RequestExtend, $NextFunctionVer, IStorageHandler} from '../../types';
 
 export default function(storage: IStorageHandler): (req: $RequestExtend, res: Response, next: $NextFunctionVer) => void {
   const validateInputs = (newUsers, localUsers, username, isStar): boolean => {

@@ -1,12 +1,10 @@
-/**
- * @prettier
-
- */
 import _ from 'lodash';
-import { USERS, HTTP_STATUS } from '@verdaccio/dev-commons/src/constants';
 import { Response, Router } from 'express';
-import { $RequestExtend, $NextFunctionVer, IStorageHandler } from '../../types';
+
+import { USERS, HTTP_STATUS } from '@verdaccio/dev-commons';
 import { Package } from '@verdaccio/types';
+
+import { $RequestExtend, $NextFunctionVer, IStorageHandler } from '../../types';
 
 type Packages = Package[];
 

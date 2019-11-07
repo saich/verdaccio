@@ -1,11 +1,9 @@
 import _ from 'lodash';
 import { HTTP_STATUS, SUPPORT_ERRORS } from '@verdaccio/dev-commons/src/constants';
-import {ErrorCode, mask} from '@verdaccio/utils/src/utils';
-import { getApiToken } from '../../../utils/src/auth-utils';
-import { stringToMD5 } from '@verdaccio/utils/src/crypto-utils';
-import { logger } from '../../../logger/src/logger';
-
+import {ErrorCode, stringToMD5, mask, getApiToken } from '@verdaccio/utils';
+import { logger } from '@verdaccio/logger';
 import { Response, Router } from 'express';
+
 import {$NextFunctionVer, $RequestExtend, IAuth, IStorageHandler} from '../../../types';
 import { Config, RemoteUser, Token } from '@verdaccio/types';
 

@@ -1,6 +1,8 @@
+import _ from 'lodash';
+
 import { IAuth, IStorageHandler } from '@verdaccio/dev-types';
 import { Config } from '@verdaccio/types';
-import _ from 'lodash';
+import { match, validateName, validatePackage, encodeScopePackage, antiLoop } from '@verdaccio/middleware';
 
 import express from 'express';
 import bodyParser from 'body-parser';
@@ -14,8 +16,6 @@ import pkg from './package';
 import stars from './stars';
 import profile from './v1/profile';
 import token from './v1/token';
-
-const { match, validateName, validatePackage, encodeScopePackage, antiLoop } = require('../../middleware/src/middleware');
 
 export default function(config: Config, auth: IAuth, storage: IStorageHandler) {
   /* eslint new-cap:off */

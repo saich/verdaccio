@@ -1,10 +1,9 @@
 import _ from 'lodash';
 import Cookies from 'cookies';
 
-import { ErrorCode } from '@verdaccio/utils/src/utils';
-import { API_ERROR, API_MESSAGE, HTTP_STATUS } from '@verdaccio/dev-commons/src/constants';
-import { createRemoteUser, createSessionToken, getApiToken, getAuthenticatedMessage, validatePassword } from '../../utils/src/auth-utils';
-import { logger } from '../../logger/src/logger';
+import { createRemoteUser, createSessionToken, getApiToken, getAuthenticatedMessage, validatePassword, ErrorCode } from '@verdaccio/utils';
+import { API_ERROR, API_MESSAGE, HTTP_STATUS } from '@verdaccio/dev-commons';
+import { logger } from '@verdaccio/logger';
 
 import { Config, RemoteUser } from '@verdaccio/types';
 import { Response, Router } from 'express';

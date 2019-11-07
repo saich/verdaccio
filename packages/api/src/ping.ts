@@ -1,8 +1,3 @@
-/**
- * @prettier
- * @flow
- */
-
 import { Router } from 'express';
 import { $RequestExtend, $ResponseExtend, $NextFunctionVer } from '../../types';
 

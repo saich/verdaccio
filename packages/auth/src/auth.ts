@@ -1,8 +1,9 @@
 import _ from 'lodash';
-import { VerdaccioError } from '@verdaccio/commons-api';
+import { NextFunction } from 'express';
 
+import { VerdaccioError } from '@verdaccio/commons-api';
 import {API_ERROR, SUPPORT_ERRORS, TOKEN_BASIC, TOKEN_BEARER} from '@verdaccio/dev-commons';
-import loadPlugin from '@verdaccio/loaders/src/plugin-loader';
+import { loadPlugin } from '@verdaccio/loaders';
 import { aesEncrypt, signPayload } from '@verdaccio/utils';
 import {
   getDefaultPlugins,
@@ -20,7 +21,6 @@ import { convertPayloadToBase64, ErrorCode } from '@verdaccio/utils';
 import { getMatchedPackagesSpec } from '@verdaccio/utils/src/config-utils';
 
 import { Config, Logger, Callback, IPluginAuth, RemoteUser, JWTSignOptions, Security, AuthPluginPackage } from '@verdaccio/types';
-import { NextFunction } from 'express';
 import { $RequestExtend, $ResponseExtend, IAuth, AESPayload } from '@verdaccio/dev-types';
 
 /* eslint-disable @typescript-eslint/no-var-requires */

@@ -1,9 +1,9 @@
 import mime from 'mime';
 import _ from 'lodash';
-import { media, allow } from '../../middleware/src/middleware';
+import { media, allow } from '@verdaccio/middleware';
 import{ Router } from 'express';
 import{ IAuth, $ResponseExtend, $RequestExtend, $NextFunctionVer, IStorageHandler } from '../../types';
-import { API_MESSAGE, HTTP_STATUS, DIST_TAGS } from '@verdaccio/dev-commons/src/constants';
+import { API_MESSAGE, HTTP_STATUS, DIST_TAGS } from '@verdaccio/dev-commons';
 import { VerdaccioError } from '@verdaccio/commons-api';
 import { Package } from '@verdaccio/types';
 
