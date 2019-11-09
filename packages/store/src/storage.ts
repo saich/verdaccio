@@ -608,4 +608,4 @@ class Storage implements IStorageHandler {
   }
 }
 
-export default Storage;
+export { Storage }

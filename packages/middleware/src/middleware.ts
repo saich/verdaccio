@@ -1,11 +1,17 @@
 import _ from 'lodash';
 
-import { validateName as utilValidateName, validatePackage as utilValidatePackage, getVersionFromTarball, isObject, ErrorCode } from '@verdaccio/utils';
+import {
+  validateName as utilValidateName,
+  validatePackage as utilValidatePackage,
+  getVersionFromTarball,
+  isObject,
+  stringToMD5,
+  ErrorCode
+} from '@verdaccio/utils';
 import { API_ERROR, HEADER_TYPE, HEADERS, HTTP_STATUS, TOKEN_BASIC, TOKEN_BEARER } from '@verdaccio/dev-commons';
-import { stringToMD5 } from '@verdaccio/utils/src/crypto-utils';
 import { $ResponseExtend, $RequestExtend, $NextFunctionVer, IAuth } from '@verdaccio/dev-types';
 import { Config, Package, RemoteUser } from '@verdaccio/types';
-import { logger } from '@verdaccio/logger/src/logger';
+import { logger } from '@verdaccio/logger';
 import { VerdaccioError } from '@verdaccio/commons-api';
 
 export function match(regexp: RegExp): any {

@@ -3,24 +3,38 @@ import URL from 'url';
 import fs from 'fs';
 import http from 'http';
 import https from 'https';
-import * as constants from '@verdaccio/dev-commons';
-import endPointAPI from 'verdaccio/src/server';
-import { getListListenAddresses, resolveConfigPath } from '../../cli/src/cli/utils';
-import { API_ERROR, certPem, csrPem, keyPem } from '@verdaccio/dev-commons/src/constants';
+import { Application } from 'express';
+import constants from 'constants';
 
 import { Callback } from '@verdaccio/types';
-import { Application } from 'express';
+import { API_ERROR, certPem, csrPem, keyPem } from '@verdaccio/dev-commons';
+import endPointAPI from '@verdaccio/server';
 
-const logger = require('@verdaccio/logger/src/logger');
+import { getListListenAddresses, resolveConfigPath } from './cli-utils';
+import {displayExperimentsInfoBox} from "./experiments";
 
-function displayExperimentsInfoBox(experiments) {
-  const experimentList = Object.keys(experiments);
-  if (experimentList.length >= 1) {
-    logger.logger.warn('⚠️  experiments are enabled, we recommend do not use experiments in production, comment out this section to disable it');
-    experimentList.forEach(experiment => {
-      logger.logger.warn(` - support for ${experiment} ${experiments[experiment] ? 'is enabled' : ' is disabled'}`);
-    });
+const logger = require('@verdaccio/logger');
+
+function launchServer(app, addr, config, configPath: string, pkgName: string, pkgVersion: string, callback: Callback): void {
+  let webServer;
+  if (addr.proto === 'https') {
+    // https  must either have key cert and ca  or a pfx and (optionally) a passphrase
+    if (!config.https || !((config.https.key && config.https.cert && config.https.ca) || config.https.pfx)) {
+      logHTTPSWarning(configPath);
+    }
+
+    webServer = handleHTTPS(app, configPath, config);
+  } else {
+    // http
+    webServer = http.createServer(app);
   }
+  if (config.server && typeof config.server.keepAliveTimeout !== 'undefined' && config.server.keepAliveTimeout !== 'null') {
+    // library definition for node is not up to date (doesn't contain recent 8.0 changes)
+    webServer.keepAliveTimeout = config.server.keepAliveTimeout * 1000;
+  }
+  unlinkAddressPath(addr);
+
+  callback(webServer, addr, pkgName, pkgVersion);
 }
 
 /**
@@ -40,31 +54,10 @@ function startVerdaccio(config: any, cliListen: string, configPath: string, pkgV
     displayExperimentsInfoBox(config.experiments);
   }
 
-  endPointAPI(config).then(
-    (app): void => {
+  endPointAPI(config).then((app): void => {
       const addresses = getListListenAddresses(cliListen, config.listen);
 
-      addresses.forEach(function(addr): void {
-        let webServer;
-        if (addr.proto === 'https') {
-          // https  must either have key cert and ca  or a pfx and (optionally) a passphrase
-          if (!config.https || !((config.https.key && config.https.cert && config.https.ca) || config.https.pfx)) {
-            logHTTPSWarning(configPath);
-          }
-
-          webServer = handleHTTPS(app, configPath, config);
-        } else {
-          // http
-          webServer = http.createServer(app);
-        }
-        if (config.server && typeof config.server.keepAliveTimeout !== 'undefined' && config.server.keepAliveTimeout !== 'null') {
-          // library definition for node is not up to date (doesn't contain recent 8.0 changes)
-          webServer.keepAliveTimeout = config.server.keepAliveTimeout * 1000;
-        }
-        unlinkAddressPath(addr);
-
-        callback(webServer, addr, pkgName, pkgVersion);
-      });
+      addresses.forEach(addr =>launchServer(app, addr, config, configPath, pkgName, pkgVersion, callback));
     }
   );
 }

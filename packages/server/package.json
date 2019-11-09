@@ -1,0 +1,12 @@
+{
+  "name": "@verdaccio/server",
+  "version": "4.4.0",
+  "description": "verdaccio server logic",
+  "main": "./src/index.ts",
+  "dependencies": {
+    "@verdaccio/dev-commons": "*",
+    "@verdaccio/dev-types": "*",
+    "@verdaccio/utils": "*",
+    "@verdaccio/logger": "*"
+  }
+}

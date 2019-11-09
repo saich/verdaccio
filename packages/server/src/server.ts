@@ -4,7 +4,7 @@ import compression from 'compression';
 import cors from 'cors';
 import { HttpError } from 'http-errors';
 
-import Storage from '@verdaccio/store/src/storage';
+import { Storage } from '@verdaccio/store';
 import { loadPlugin } from '@verdaccio/loaders';
 import { Auth } from '@verdaccio/auth';
 import apiEndpoint from '@verdaccio/api';
@@ -19,7 +19,7 @@ import { Config as IConfig, IPluginMiddleware, IPluginStorageFilter } from '@ver
 import { setup, logger } from '@verdaccio/logger';
 import { log, final, errorReportingMiddleware } from '@verdaccio/middleware';
 
-import hookDebug from '../debug';
+import hookDebug from '../../verdaccio/src/debug';
 
 const defineAPI = function(config: IConfig, storage: IStorageHandler): any {
   const auth: IAuth = new Auth(config);

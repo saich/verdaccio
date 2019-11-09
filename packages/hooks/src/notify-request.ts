@@ -1,7 +1,8 @@
 import isNil from 'lodash/isNil';
-import { logger } from '@verdaccio/logger/src/logger';
 import request, { RequiredUriUrl } from 'request';
-import { HTTP_STATUS } from '@verdaccio/dev-commons/src/constants';
+
+import { logger } from '@verdaccio/logger';
+import { HTTP_STATUS } from '@verdaccio/commons-api';
 
 export function notifyRequest(options: RequiredUriUrl, content): Promise<any | Error> {
   return new Promise(

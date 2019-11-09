@@ -4,15 +4,15 @@ import Path from 'path';
 import { logger } from '@verdaccio/logger/src/logger';
 import mkdirp from 'mkdirp';
 
-import { folderExists, fileExists } from '@verdaccio/utils/src/utils';
-import { CHARACTER_ENCODING } from '@verdaccio/dev-commons/src/constants';
+import { folderExists, fileExists } from '@verdaccio/utils';
+import { CHARACTER_ENCODING } from '@verdaccio/dev-commons';
 
 const CONFIG_FILE = 'config.yaml';
 const XDG = 'xdg';
 const WIN = 'win';
 const WIN32 = 'win32';
 // eslint-disable-next-line
-const pkgJSON = require('../../../package.json');
+const pkgJSON = require('../../package.json');
 
 export type SetupDirectory = {
   path: string;

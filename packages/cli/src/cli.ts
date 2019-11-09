@@ -6,7 +6,7 @@
 import path from 'path';
 import semver from 'semver';
 import { bgYellow, bgRed } from 'kleur';
-import {startVerdaccio, listenDefaultCallback} from '@verdaccio/node-api/src/bootstrap';
+import {startVerdaccio, listenDefaultCallback} from '@verdaccio/node-api';
 import findConfigFile from '@verdaccio/config/src/config-path';
 import { parseConfigFile } from '@verdaccio/utils/src/utils';
 

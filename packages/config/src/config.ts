@@ -1,16 +1,23 @@
 import _ from 'lodash';
 import assert from 'assert';
 
-import { generateRandomHexString } from '@verdaccio/utils/src/crypto-utils';
-import { getMatchedPackagesSpec, normalisePackageAccess, sanityCheckUplinksProps, uplinkSanityCheck } from '@verdaccio/utils/src/config-utils';
-import { getUserAgent, isObject } from '@verdaccio/utils/src/utils';
-import { APP_ERROR } from '@verdaccio/dev-commons/src/constants';
+import {
+  getMatchedPackagesSpec,
+  normalisePackageAccess,
+  sanityCheckUplinksProps,
+  uplinkSanityCheck,
+  generateRandomHexString,
+  getUserAgent,
+  isObject
+} from '@verdaccio/utils';
+import { APP_ERROR } from '@verdaccio/dev-commons';
 
 import { PackageList, Config as AppConfig, Security, Logger } from '@verdaccio/types';
 
 import { MatchedPackage, StartUpConfig } from '@verdaccio/dev-types';
 
-const LoggerApi = require('@verdaccio/logger/src/logger');
+const LoggerApi = require('@verdaccio/logger');
+
 const strategicConfigProps = ['uplinks', 'packages'];
 const allowedEnvConfig = ['http_proxy', 'https_proxy', 'no_proxy'];
 

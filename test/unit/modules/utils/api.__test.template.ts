@@ -11,7 +11,7 @@ import _ from 'lodash';
 import path from 'path';
 import rimraf from 'rimraf';
 
-import endPointAPI from '../../../../packages/verdaccio/src/server';
+import endPointAPI from '../../../../packages/server/src/server';
 import {mockServer} from '../../__helper/mock';
 import {DOMAIN_SERVERS} from '../../../functional/config.functional';
 import {parseConfigFile} from '@verdaccio/utils/src/utils';

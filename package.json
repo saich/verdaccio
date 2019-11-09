@@ -40,6 +40,7 @@
     "jest": "24.9.0",
     "jest-environment-node": "24.9.0",
     "jest-junit": "8.0.0",
+    "lerna": "3.18.4",
     "lint-staged": "8.2.1",
     "nock": "11.3.3",
     "prettier": "1.18.2",
@@ -52,6 +53,12 @@
     "verdaccio-memory": "8.2.0"
   },
   "scripts": {
+    "release": "lerna version --conventional-commits",
+    "publish:canary": "lerna publish --canary",
+    "release:from-prerelease": "lerna version --conventional-commits --conventional-graduate",
+    "release:prerelease": "lerna version --conventional-commits --conventional-prerelease --preid next",
+    "release:publish": "lerna publish from-git",
+    "release:publish-prerelease": "lerna publish from-git --pre-dist-tag next",
     "lint": "eslint \"packages/**/@(src|tests)/**\""
   }
 }
