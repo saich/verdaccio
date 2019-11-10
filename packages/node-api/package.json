@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@verdaccio/server": "*"
+    "@verdaccio/server": "4.4.0",
+    "@verdaccio/dev-commons": "4.4.0",
+    "@verdaccio/logger": "4.4.0",
+    "@verdaccio/utils": "4.4.0"
   }
 }
