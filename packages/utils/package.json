@@ -11,5 +11,8 @@
   },
   "devDependencies": {
     "@verdaccio/dev-types": "^4.3.5-next.1"
+  },
+  "scripts": {
+    "build": "cross-env BABEL_ENV=registry babel src/ --out-dir build/ --copy-files --extensions \".ts,.tsx\" --source-maps inline"
   }
 }

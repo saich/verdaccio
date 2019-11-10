@@ -53,6 +53,7 @@
     "verdaccio-memory": "8.2.0"
   },
   "scripts": {
+    "build": "lerna run build",
     "release": "lerna version --conventional-commits",
     "publish:canary": "lerna publish --canary",
     "release:from-prerelease": "lerna version --conventional-commits --conventional-graduate",
