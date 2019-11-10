@@ -1,11 +1,6 @@
-/**
- * @prettier
- * @flow
- */
-
 import semver from 'semver';
 import _ from 'lodash';
-import { DIST_TAGS } from '@verdaccio/dev-commons/src/constants';
+import { DIST_TAGS } from '@verdaccio/dev-commons';
 
 import { Package } from '@verdaccio/types';
 

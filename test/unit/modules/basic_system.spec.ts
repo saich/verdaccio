@@ -1,4 +1,4 @@
-import endPointAPI from '@verdaccio/server';
+import endPointAPI from '@verdaccio/server/src';
 import {API_ERROR} from '@verdaccio/dev-commons';
 
 import express from 'express';

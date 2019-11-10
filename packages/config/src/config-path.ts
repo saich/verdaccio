@@ -1,7 +1,7 @@
 import fs from 'fs';
 import _ from 'lodash';
 import Path from 'path';
-import { logger } from '@verdaccio/logger/src/logger';
+import { logger } from '@verdaccio/logger';
 import mkdirp from 'mkdirp';
 
 import { folderExists, fileExists } from '@verdaccio/utils';
@@ -12,7 +12,7 @@ const XDG = 'xdg';
 const WIN = 'win';
 const WIN32 = 'win32';
 // eslint-disable-next-line
-const pkgJSON = require('../../package.json');
+const pkgJSON = require('../package.json');
 
 export type SetupDirectory = {
   path: string;

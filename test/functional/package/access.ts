@@ -1,4 +1,4 @@
-import {buildToken} from "@verdaccio/utils";
+import {buildToken} from "@verdaccio/utils/src";
 import {API_ERROR, HTTP_STATUS, TOKEN_BASIC} from "@verdaccio/dev-commons";
 
 import {CREDENTIALS} from "../config.functional";

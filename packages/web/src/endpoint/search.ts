@@ -3,8 +3,8 @@
  * @flow
  */
 
-import Search from '@verdaccio/search/src/v1/search';
-import { DIST_TAGS } from '@verdaccio/dev-commons/src/constants';
+import Search from '@verdaccio/search';
+import { DIST_TAGS } from '@verdaccio/dev-commons';
 import { Router } from 'express';
 import { IAuth, $ResponseExtend, $RequestExtend, $NextFunctionVer, IStorageHandler } from '@verdaccio/dev-types';
 import { Package } from '@verdaccio/types';

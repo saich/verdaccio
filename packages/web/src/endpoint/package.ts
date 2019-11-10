@@ -12,7 +12,7 @@ import {
 } from '@verdaccio/utils';
 import { allow } from '@verdaccio/middleware';
 import { DIST_TAGS, HEADER_TYPE, HEADERS, HTTP_STATUS } from '@verdaccio/dev-commons';
-import { logger } from '@verdaccio/logger/src/logger';
+import { logger } from '@verdaccio/logger';
 import { Router } from 'express';
 import { IAuth, $ResponseExtend, $RequestExtend, $NextFunctionVer, IStorageHandler, $SidebarPackage } from '@verdaccio/dev-types';
 import { Config, Package } from '@verdaccio/types';

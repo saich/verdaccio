@@ -1,4 +1,4 @@
-import { generateGravatarUrl, GENERIC_AVATAR, spliceURL } from '@verdaccio/utils';
+import { generateGravatarUrl, GENERIC_AVATAR, spliceURL } from '@verdaccio/utils/src';
 import {
   validateName,
   convertDistRemoteToLocalTarballUrls,

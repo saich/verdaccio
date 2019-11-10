@@ -18,7 +18,7 @@ import {
   createRemoteUser,
 } from '@verdaccio/utils';
 import { convertPayloadToBase64, ErrorCode } from '@verdaccio/utils';
-import { getMatchedPackagesSpec } from '@verdaccio/utils/src/config-utils';
+import { getMatchedPackagesSpec } from '@verdaccio/utils';
 
 import { Config, Logger, Callback, IPluginAuth, RemoteUser, JWTSignOptions, Security, AuthPluginPackage } from '@verdaccio/types';
 import { $RequestExtend, $ResponseExtend, IAuth, AESPayload } from '@verdaccio/dev-types';

@@ -16,7 +16,7 @@ import {
   HEADERS,
   DIST_TAGS,
   DEFAULT_USER,
-} from '@verdaccio/dev-commons/src/constants';
+} from '@verdaccio/dev-commons';
 import { generateGravatarUrl, GENERIC_AVATAR } from './user';
 
 import { Package, Version, Author } from '@verdaccio/types';
