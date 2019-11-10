@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/cli",
-  "version": "4.3.5-next.0",
+  "version": "4.3.5-next.1",
   "author": "Juan Picado <juanpicado19@gmail.com>",
   "description": "verdaccio CLI",
   "license": "MIT",
@@ -10,9 +10,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@verdaccio/config": "^4.3.5-next.0",
-    "@verdaccio/node-api": "^4.3.5-next.0",
-    "@verdaccio/utils": "^4.3.5-next.0",
+    "@verdaccio/config": "^4.3.5-next.1",
+    "@verdaccio/node-api": "^4.3.5-next.1",
+    "@verdaccio/utils": "^4.3.5-next.1",
     "commander": "3.0.2",
     "envinfo": "7.4.0",
     "kleur": "3.0.3",

@@ -1,12 +1,12 @@
 {
   "name": "@verdaccio/middleware",
-  "version": "4.3.5-next.0",
+  "version": "4.3.5-next.1",
   "description": "loaders logic",
   "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@verdaccio/dev-types": "^4.3.5-next.0"
+    "@verdaccio/dev-types": "^4.3.5-next.1"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "verdaccio",
-  "version": "4.3.5-next.0",
+  "version": "4.3.5-next.1",
   "description": "A lightweight private npm proxy registry",
   "main": "build/index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "verdaccio": "./bin/verdaccio"
   },
   "dependencies": {
-    "@verdaccio/cli": "^4.3.5-next.0"
+    "@verdaccio/cli": "^4.3.5-next.1"
   },
   "keywords": [
     "private",

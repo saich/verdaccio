@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/proxy",
-  "version": "4.3.5-next.0",
+  "version": "4.3.5-next.1",
   "description": "logger",
   "main": "./src/index.ts",
   "scripts": {

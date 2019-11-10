@@ -1,14 +1,14 @@
 {
   "name": "@verdaccio/server",
-  "version": "4.3.5-next.0",
+  "version": "4.3.5-next.1",
   "description": "verdaccio server logic",
   "main": "./src/index.ts",
   "dependencies": {
-    "@verdaccio/dev-commons": "^4.3.5-next.0",
-    "@verdaccio/logger": "^4.3.5-next.0",
-    "@verdaccio/utils": "^4.3.5-next.0"
+    "@verdaccio/dev-commons": "^4.3.5-next.1",
+    "@verdaccio/logger": "^4.3.5-next.1",
+    "@verdaccio/utils": "^4.3.5-next.1"
   },
   "devDependencies": {
-    "@verdaccio/dev-types": "^4.3.5-next.0"
+    "@verdaccio/dev-types": "^4.3.5-next.1"
   }
 }
