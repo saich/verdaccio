@@ -7,11 +7,11 @@ import {
   parseReadme,
   formatAuthor,
   convertDistRemoteToLocalTarballUrls,
-  isVersionValid
-} from '@verdaccio/utils/src/utils';
-import { allow } from '@verdaccio/middleware/src/middleware';
-import { DIST_TAGS, HEADER_TYPE, HEADERS, HTTP_STATUS } from '@verdaccio/dev-commons/src/constants';
-import { generateGravatarUrl } from '../../../../packages/utils/source/user';
+  isVersionValid,
+  generateGravatarUrl
+} from '@verdaccio/utils';
+import { allow } from '@verdaccio/middleware';
+import { DIST_TAGS, HEADER_TYPE, HEADERS, HTTP_STATUS } from '@verdaccio/dev-commons';
 import { logger } from '@verdaccio/logger/src/logger';
 import { Router } from 'express';
 import { IAuth, $ResponseExtend, $RequestExtend, $NextFunctionVer, IStorageHandler, $SidebarPackage } from '@verdaccio/dev-types';

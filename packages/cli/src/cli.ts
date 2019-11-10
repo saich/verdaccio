@@ -5,9 +5,9 @@ import commander from 'commander';
 import { bgYellow, bgRed } from 'kleur';
 
 import { setup, logger } from '@verdaccio/logger';
+
 import infoCommand from "./commands/info";
 import initProgram from "./commands/init";
-
 import {isVersionValid, MIN_NODE_VERSION} from "./utils";
 
 require('pkginfo')(module);

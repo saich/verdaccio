@@ -7,9 +7,10 @@
     "build": "cross-env BABEL_ENV=registry babel src/ --out-dir build/ --copy-files --extensions \".ts,.tsx\" --source-maps inline"
   },
   "dependencies": {
-    "bunyan": "1.8.12"
+    "lunr-mutable-indexes": "2.3.2"
   },
   "devDependencies": {
-    "@types/bunyan": "1.8.6"
+    "@verdaccio/types": "8.1.0",
+    "@verdaccio/dev-types": "^4.3.5-next.1"
   }
 }

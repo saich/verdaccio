@@ -2,8 +2,10 @@ import _ from 'lodash';
 import assert from 'assert';
 import smartRequest from './request';
 import {IServerBridge} from '../types';
-import {API_MESSAGE, HEADERS, HTTP_STATUS, TOKEN_BASIC} from '@verdaccio/dev-commons/src/constants';
-import {buildToken} from "@verdaccio/utils/src/utils";
+
+import {API_MESSAGE, HEADERS, HTTP_STATUS, TOKEN_BASIC} from '@verdaccio/dev-commons';
+import {buildToken} from "@verdaccio/utils";
+
 import {CREDENTIALS} from "../functional/config.functional";
 import getPackage from '../functional/fixtures/package';
 

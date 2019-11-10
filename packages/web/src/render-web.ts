@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import express from 'express';
 
-import { combineBaseUrl, getWebProtocol, isHTTPProtocol } from '@verdaccio/utils/src/utils';
+import { combineBaseUrl, getWebProtocol, isHTTPProtocol } from '@verdaccio/utils';
 import Search from '@verdaccio/search/src/v1/search';
 import { HEADERS, HTTP_STATUS, WEB_TITLE } from '@verdaccio/dev-commons/src/constants';
 import { loadPlugin } from '@verdaccio/loaders/src/plugin-loader';

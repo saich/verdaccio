@@ -3,6 +3,9 @@
   "version": "4.3.5-next.1",
   "description": "A lightweight private npm proxy registry",
   "main": "build/index.js",
+  "bin": {
+    "verdaccio": "./bin/verdaccio"
+  },
   "scripts": {
     "release": "standard-version -a -s",
     "prepublish": "in-publish && npm run code:build || not-in-publish",
@@ -40,7 +43,8 @@
     "verdaccio": "./bin/verdaccio"
   },
   "dependencies": {
-    "@verdaccio/cli": "^4.3.5-next.1"
+    "@verdaccio/cli": "^4.3.5-next.1",
+    "@verdaccio/node-api": "^4.3.5-next.1"
   },
   "keywords": [
     "private",

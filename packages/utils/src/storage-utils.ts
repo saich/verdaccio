@@ -1,11 +1,12 @@
 import _ from 'lodash';
 import { ErrorCode, isObject, normalizeDistTags, semverSort } from './utils';
-import Search from '../../search/src/v1/search';
+import Search from '@verdaccio/search';
+
 import { generateRandomHexString } from './crypto-utils';
 
 import { Package, Version, Author } from '@verdaccio/types';
 import { IStorage } from '@verdaccio/dev-types';
-import { API_ERROR, HTTP_STATUS, DIST_TAGS, USERS, STORAGE } from '@verdaccio/dev-commons/src/constants';
+import { API_ERROR, HTTP_STATUS, DIST_TAGS, USERS, STORAGE } from '@verdaccio/dev-commons';
 
 export function generatePackageTemplate(name: string): Package {
   return {

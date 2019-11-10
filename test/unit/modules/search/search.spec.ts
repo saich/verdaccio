@@ -1,4 +1,4 @@
-import Search from '../../../../packages/search/src/v1/search';
+import Search from '@verdaccio/search/src/search';
 import Config from '../../../../packages/config/src/config';
 import Storage from '@verdaccio/store/src/storage';
 import buildConfig from '../../partials/config';

@@ -1,12 +1,11 @@
 import _ from 'lodash';
-import { convertPayloadToBase64, ErrorCode } from './utils';
-import { API_ERROR, HTTP_STATUS, ROLES, TIME_EXPIRATION_7D, TOKEN_BASIC, TOKEN_BEARER, DEFAULT_MIN_LIMIT_PASSWORD } from '@verdaccio/dev-commons/src/constants';
 
-import { RemoteUser, Package, Callback, Config, Security, APITokenOptions, JWTOptions, IPluginAuth } from '@verdaccio/types';
+import { API_ERROR, HTTP_STATUS, ROLES, TIME_EXPIRATION_7D, TOKEN_BASIC, TOKEN_BEARER, DEFAULT_MIN_LIMIT_PASSWORD } from '@verdaccio/dev-commons';
 import { CookieSessionToken, IAuthWebUI, AuthMiddlewarePayload, AuthTokenHeader, BasicPayload } from '@verdaccio/dev-types';
-import { aesDecrypt, verifyPayload } from './crypto-utils';
+import { RemoteUser, Package, Callback, Config, Security, APITokenOptions, JWTOptions, IPluginAuth } from '@verdaccio/types';
 
-import { logger } from '@verdaccio/logger';
+import { convertPayloadToBase64, ErrorCode } from './utils';
+import { aesDecrypt, verifyPayload } from './crypto-utils';
 
 export function validatePassword(password: string, minLength: number = DEFAULT_MIN_LIMIT_PASSWORD): boolean {
   return typeof password === 'string' && password.length >= minLength;
@@ -40,7 +39,7 @@ export function createAnonymousRemoteUser(): RemoteUser {
   };
 }
 
-export function allow_action(action: string): Function {
+export function allow_action(action: string, logger): Function {
   return function(user: RemoteUser, pkg: Package, callback: Callback): void {
     logger.trace({remote: user.name}, `[auth/allow_action]: user: @{user.name}`);
     const { name, groups } = user;

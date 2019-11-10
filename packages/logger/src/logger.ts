@@ -1,16 +1,18 @@
 /* eslint-disable */
 
-import {prettyTimestamped} from "./format/pretty-timestamped";
-import {pretty} from "./format/pretty";
-import {jsonFormat} from "./format/json";
-
 const cluster = require('cluster');
 const Logger = require('bunyan');
 const Error = require('http-errors');
 const Stream = require('stream');
-const pkgJSON = require('../../../package.json');
 const _ = require('lodash');
 const dayjs = require('dayjs');
+
+const pkgJSON = require('../../../package.json');
+
+
+import {prettyTimestamped} from "./format/pretty-timestamped";
+import {pretty} from "./format/pretty";
+import {jsonFormat} from "./format/json";
 
 /**
  * A RotatingFileStream that modifies the message first

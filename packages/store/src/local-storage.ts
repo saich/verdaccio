@@ -1,12 +1,12 @@
 import assert from 'assert';
 import UrlNode from 'url';
 import _ from 'lodash';
-import { ErrorCode, isObject, getLatestVersion, tagVersion, validateName } from '@verdaccio/utils/src/utils';
-import { generatePackageTemplate, normalizePackage, generateRevision, getLatestReadme, cleanUpReadme, normalizeContributors } from '@verdaccio/utils/src/storage-utils';
-import {API_ERROR, DIST_TAGS, HTTP_STATUS, STORAGE, SUPPORT_ERRORS, USERS} from '@verdaccio/dev-commons/src/constants';
+import { ErrorCode, isObject, getLatestVersion, tagVersion, validateName } from '@verdaccio/utils';
+import { generatePackageTemplate, normalizePackage, generateRevision, getLatestReadme, cleanUpReadme, normalizeContributors } from '@verdaccio/utils';
+import {API_ERROR, DIST_TAGS, HTTP_STATUS, STORAGE, SUPPORT_ERRORS, USERS} from '@verdaccio/dev-commons';
 import { createTarballHash } from '@verdaccio/utils/src/crypto-utils';
 import { prepareSearchPackage } from '@verdaccio/utils/src/storage-utils';
-import loadPlugin from '@verdaccio/loaders/src/plugin-loader';
+import { loadPlugin } from '@verdaccio/loaders';
 import LocalDatabase from '@verdaccio/local-storage';
 import { UploadTarball, ReadTarball } from '@verdaccio/streams';
 import { Token, TokenFilter, Package, Config, IUploadTarball, IReadTarball, MergeTags, Version, DistFile, Callback, Logger, IPluginStorage, IPackageStorage, Author } from '@verdaccio/types';

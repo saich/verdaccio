@@ -1,16 +1,11 @@
-/**
- * @prettier
- * @flow
- */
-
 import _ from 'lodash';
-import { API_ERROR, APP_ERROR, HTTP_STATUS } from '@verdaccio/dev-commons/src/constants';
-
 import { Router, Response, Request } from 'express';
+
 import { Config, RemoteUser, JWTSignOptions } from '@verdaccio/types';
+
+import { API_ERROR, APP_ERROR, HTTP_STATUS } from '@verdaccio/dev-commons';
 import { IAuth, $NextFunctionVer } from '@verdaccio/dev-types';
-import { ErrorCode } from '@verdaccio/utils/src/utils';
-import { getSecurity, validatePassword } from '@verdaccio/utils/src/auth-utils';
+import { getSecurity, validatePassword, ErrorCode } from '@verdaccio/utils';
 
 function addUserAuthApi(route: Router, auth: IAuth, config: Config): void {
   route.post('/login', function(req: Request, res: Response, next: $NextFunctionVer): void {

@@ -1,9 +1,10 @@
-import _ from 'lodash';
 import fs from 'fs';
 import assert from 'assert';
+import URL from 'url';
+
+import _ from 'lodash';
 import semver from 'semver';
 import YAML from 'js-yaml';
-import URL from 'url';
 import sanitizyReadme from '@verdaccio/readme';
 
 import {
@@ -34,8 +35,6 @@ import {
   getCode,
 } from '@verdaccio/commons-api';
 import { IncomingHttpHeaders } from 'http2';
-
-import { logger } from '@verdaccio/logger/src/logger';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -282,7 +281,7 @@ export function parseAddress(urlAddress: any): any {
  * Function filters out bad semver versions and sorts the array.
  * @return {Array} sorted Array
  */
-export function semverSort(listVersions: string[]): string[] {
+export function semverSort(listVersions: string[], logger): string[] {
   return (
     listVersions
       .filter(function(x): boolean {
@@ -519,7 +518,7 @@ export function addGravatarSupport(pkgInfo: Package, online = true): AuthorAvata
  * @param {String} readme package readme
  * @return {String} converted html template
  */
-export function parseReadme(packageName: string, readme: string): string | void {
+export function parseReadme(packageName: string, readme: string, logger): string | void {
   if (_.isEmpty(readme) === false) {
     return sanitizyReadme(readme);
   }

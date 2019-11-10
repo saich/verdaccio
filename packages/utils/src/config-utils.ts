@@ -1,13 +1,8 @@
-/**
- * @prettier
- * @flow
- */
-
 import _ from 'lodash';
 import assert from 'assert';
 import minimatch from 'minimatch';
 
-import { ErrorCode } from 'src/utils';
+import { ErrorCode } from './utils';
 
 import { PackageList, UpLinksConfList } from '@verdaccio/types';
 import { MatchedPackage, LegacyPackageList } from '@verdaccio/dev-types';

@@ -1,8 +1,8 @@
 import { inspect } from 'util';
-import { isObject, pad } from '@verdaccio/utils/src/utils';
-import { red, green } from 'kleur';
 
-import { white } from 'kleur';
+import { isObject, pad } from '@verdaccio/utils';
+import { white, red, green } from 'kleur';
+
 import {calculateLevel, levels, subsystems} from "./levels";
 
 let LEVEL_VALUE_MAX = 0;

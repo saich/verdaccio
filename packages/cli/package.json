@@ -16,6 +16,7 @@
     "commander": "3.0.2",
     "envinfo": "7.4.0",
     "kleur": "3.0.3",
+    "pkginfo": "0.4.1",
     "semver": "6.3.0"
   }
 }

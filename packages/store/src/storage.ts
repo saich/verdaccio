@@ -3,7 +3,7 @@ import assert from 'assert';
 import async, { AsyncResultArrayCallback } from 'async';
 import Stream from 'stream';
 import { ProxyStorage } from '@verdaccio/proxy';
-import Search from '../../search/src/v1/search';
+import Search from '@verdaccio/search/src/search';
 import { API_ERROR, HTTP_STATUS, DIST_TAGS } from '@verdaccio/dev-commons';
 import LocalStorage from './local-storage';
 import { ReadTarball } from '@verdaccio/streams';
