@@ -7,7 +7,7 @@ const Stream = require('stream');
 const _ = require('lodash');
 const dayjs = require('dayjs');
 
-const pkgJSON = require('../../../package.json');
+const pkgJSON = require('../package.json');
 
 
 import {prettyTimestamped} from "./format/pretty-timestamped";

@@ -9,11 +9,10 @@ import constants from 'constants';
 import { Callback } from '@verdaccio/types';
 import { API_ERROR, certPem, csrPem, keyPem } from '@verdaccio/dev-commons';
 import endPointAPI from '@verdaccio/server';
+import { logger} from '@verdaccio/logger';
 
 import { getListListenAddresses, resolveConfigPath } from './cli-utils';
 import {displayExperimentsInfoBox} from "./experiments";
-
-const logger = require('@verdaccio/logger');
 
 function launchServer(app, addr, config, configPath: string, pkgName: string, pkgVersion: string, callback: Callback): void {
   let webServer;
@@ -69,7 +68,7 @@ function unlinkAddressPath(addr) {
 }
 
 function logHTTPSWarning(storageLocation) {
-  logger.logger.fatal(
+  logger.fatal(
     [
       'You have enabled HTTPS and need to specify either ',
       '    "https.key", "https.cert" and "https.ca" or ',
@@ -118,7 +117,7 @@ function handleHTTPS(app, configPath, config) {
     return https.createServer(httpsOptions, app);
   } catch (err) {
     // catch errors related to certificate loading
-    logger.logger.fatal({ err: err }, 'cannot create server: @{err.message}');
+    logger.fatal({ err: err }, 'cannot create server: @{err.message}');
     process.exit(2);
   }
 }
@@ -138,11 +137,11 @@ function listenDefaultCallback(webServer: Application, addr: any, pkgName: strin
       }
     )
     .on('error', function(err): void {
-      logger.logger.fatal({ err: err }, 'cannot create server: @{err.message}');
+      logger.fatal({ err: err }, 'cannot create server: @{err.message}');
       process.exit(2);
     });
 
-  logger.logger.warn(
+  logger.warn(
     {
       addr: addr.path
         ? URL.format({

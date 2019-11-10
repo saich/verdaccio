@@ -32,11 +32,11 @@ export default function initProgram(commander,  pkgVersion, pkgName) {
 			});
 		}
 
-		logger.logger.warn({file: configPathLocation}, 'config file  - @{file}');
+		logger.warn({file: configPathLocation}, 'config file  - @{file}');
 
 		startVerdaccio(verdaccioConfiguration, cliListener, configPathLocation, pkgVersion, pkgName, listenDefaultCallback);
 	} catch (err) {
-		logger.logger.fatal({file: configPathLocation, err: err}, 'cannot open config file @{file}: @{!err.message}');
+		logger.fatal({file: configPathLocation, err: err}, 'cannot open config file @{file}: @{!err.message}');
 		process.exit(1);
 	}
 }

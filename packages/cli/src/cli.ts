@@ -54,7 +54,7 @@ if (commander.info) {
 }
 
 process.on('uncaughtException', function(err) {
-  logger.logger.fatal( {
+  logger.fatal( {
     err: err,
   },
   'uncaught exception, please report (https://github.com/verdaccio/verdaccio/issues) this: \n@{err.stack}' );
