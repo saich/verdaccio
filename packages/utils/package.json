@@ -5,9 +5,11 @@
   "main": "./src/index.ts",
   "dependencies": {
     "@verdaccio/dev-commons": "^4.3.5-next.0",
-    "@verdaccio/dev-types": "^4.3.5-next.0",
     "@verdaccio/logger": "^4.3.5-next.0",
     "@verdaccio/utils": "^4.3.5-next.0",
     "js-yaml": "3.13.1"
+  },
+  "devDependencies": {
+    "@verdaccio/dev-types": "^4.3.5-next.0"
   }
 }
