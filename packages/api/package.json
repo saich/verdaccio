@@ -1,13 +1,13 @@
 {
   "name": "@verdaccio/api",
-  "version": "4.3.4",
+  "version": "4.3.5-next.0",
   "description": "loaders logic",
   "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "body-parser": "1.19.0",
-    "@verdaccio/dev-types": "*"
+    "@verdaccio/dev-types": "^4.3.5-next.0",
+    "body-parser": "1.19.0"
   }
 }

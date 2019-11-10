@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/loaders",
-  "version": "4.3.4",
+  "version": "4.3.5-next.0",
   "description": "loaders logic",
   "main": "./src/index.ts"
 }

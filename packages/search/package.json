@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/search",
-  "version": "4.3.4",
+  "version": "4.3.5-next.0",
   "description": "searc",
   "main": "./src/index.ts",
   "scripts": {

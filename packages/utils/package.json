@@ -1,13 +1,13 @@
 {
   "name": "@verdaccio/utils",
-  "version": "4.3.4",
+  "version": "4.3.5-next.0",
   "description": "loaders logic",
   "main": "./src/index.ts",
   "dependencies": {
-    "js-yaml": "3.13.1",
-    "@verdaccio/dev-commons": "*",
-    "@verdaccio/dev-types": "*",
-    "@verdaccio/utils": "*",
-    "@verdaccio/logger": "*"
+    "@verdaccio/dev-commons": "^4.3.5-next.0",
+    "@verdaccio/dev-types": "^4.3.5-next.0",
+    "@verdaccio/logger": "^4.3.5-next.0",
+    "@verdaccio/utils": "^4.3.5-next.0",
+    "js-yaml": "3.13.1"
   }
 }

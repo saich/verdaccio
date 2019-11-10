@@ -1,15 +1,15 @@
 {
   "name": "@verdaccio/node-api",
-  "version": "4.3.4",
+  "version": "4.3.5-next.0",
   "description": "node API",
   "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@verdaccio/server": "4.3.4",
-    "@verdaccio/dev-commons": "4.3.4",
-    "@verdaccio/logger": "4.3.4",
-    "@verdaccio/utils": "4.3.4"
+    "@verdaccio/dev-commons": "^4.3.5-next.0",
+    "@verdaccio/logger": "^4.3.5-next.0",
+    "@verdaccio/server": "^4.3.5-next.0",
+    "@verdaccio/utils": "^4.3.5-next.0"
   }
 }
