@@ -20,7 +20,7 @@
     "verdaccio": "./bin/verdaccio"
   },
   "dependencies": {
-    "@verdaccio/cli": "4.4.0"
+    "@verdaccio/cli": "4.3.5"
   },
   "keywords": [
     "private",
