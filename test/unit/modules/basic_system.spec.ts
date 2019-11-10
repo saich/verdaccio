@@ -1,5 +1,5 @@
-import endPointAPI from 'verdaccio/src/server';
-import {API_ERROR} from '@verdaccio/dev-commons/src/constants';
+import endPointAPI from '@verdaccio/server';
+import {API_ERROR} from '@verdaccio/dev-commons';
 
 import express from 'express';
 import request from 'request';

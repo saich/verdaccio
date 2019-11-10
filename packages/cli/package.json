@@ -5,7 +5,7 @@
   "description": "verdaccio CLI",
   "license": "MIT",
   "homepage": "https://verdaccio.org",
-  "main": "./src/index.ts",
+  "main": "./build/index.js",
   "scripts": {
     "build": "cross-env BABEL_ENV=registry babel src/ --out-dir build/ --copy-files --extensions \".ts,.tsx\" --source-maps inline"
   },

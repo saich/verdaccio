@@ -22,6 +22,7 @@
     "lint:lockfile": "lockfile-lint --path yarn.lock --type yarn --validate-https --allowed-hosts verdaccio npm yarn",
     "format": "prettier --single-quote --trailing-comma none --write \"{src,test}/**/*.ts\"",
     "dev:start": "cross-env BABEL_ENV=registry babel-node --extensions \".ts,.tsx\" src/lib/cli",
+    "build": "cross-env BABEL_ENV=registry babel src/ --out-dir build/ --copy-files --extensions \".ts,.tsx\" --source-maps inline",
     "code:build": "cross-env BABEL_ENV=registry babel src/ --out-dir build/ --copy-files --extensions \".ts,.tsx\" --source-maps inline",
     "code:docker-build": "cross-env BABEL_ENV=registry-docker babel src/ --out-dir build/ --copy-files --extensions \".ts,.tsx\"",
     "build:docker": "docker build -t verdaccio/verdaccio:local . --no-cache"

@@ -53,6 +53,7 @@
     "verdaccio-memory": "8.2.0"
   },
   "scripts": {
+    "dev": "cross-env BABEL_ENV=registry babel-node --extensions \".ts,.tsx\" packages/cli/src",
     "build": "lerna run build",
     "release": "lerna version --conventional-commits",
     "publish:canary": "lerna publish --canary",

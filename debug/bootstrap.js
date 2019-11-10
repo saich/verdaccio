@@ -3,4 +3,4 @@
 require('@babel/register')({
 	extensions: [".ts", ".js"]
 });
-require('@verdaccio/cli');
+require('../packages/cli/src/index');
