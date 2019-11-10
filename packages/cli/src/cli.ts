@@ -1,35 +1,33 @@
-#!/usr/bin/env node
-
 /* eslint no-sync:0 */
 /* eslint no-empty:0 */
 
-import path from 'path';
-import semver from 'semver';
+import commander from 'commander';
 import { bgYellow, bgRed } from 'kleur';
-import {startVerdaccio, listenDefaultCallback} from '@verdaccio/node-api';
-import findConfigFile from '@verdaccio/config/src/config-path';
-import { parseConfigFile } from '@verdaccio/utils/src/utils';
+
+import { setup, logger } from '@verdaccio/logger';
+import infoCommand from "./commands/info";
+import initProgram from "./commands/init";
+
+import {isVersionValid, MIN_NODE_VERSION} from "./utils";
 
 require('pkginfo')(module);
 
-if (process.getuid && process.getuid() === 0) {
+const isRootUser = process.getuid && process.getuid() === 0;
+
+if (isRootUser) {
   global.console.warn(bgYellow().red('*** WARNING: Verdaccio doesn\'t need superuser privileges. Don\'t run it under root! ***'));
 }
 
-const MIN_NODE_VERSION = '6.9.0';
-
-if (semver.satisfies(process.version, `>=${MIN_NODE_VERSION}`) === false) {
+if (isVersionValid()) {
   global.console.error(bgRed(`Verdaccio requires at least Node.js ${MIN_NODE_VERSION} or higher, please upgrade your Node.js distribution`));
   process.exit(1);
 }
 
 process.title = 'verdaccio';
 
-const logger = require('@verdaccio/logger');
-logger.setup(null, {logStart: false}); // default setup
+// default setup
+setup(null, {logStart: false});
 
-const envinfo = require('envinfo');
-const commander = require('commander');
 const pkgVersion = module.exports.version;
 const pkgName = module.exports.name;
 
@@ -40,61 +38,25 @@ commander
   .version(pkgVersion)
   .parse(process.argv);
 
-function init() {
-  let verdaccioConfiguration;
-  let configPathLocation;
-  const cliListener = commander.listen;
-
-  try {
-    configPathLocation = findConfigFile(commander.config);
-    verdaccioConfiguration = parseConfigFile(configPathLocation);
-    process.title = verdaccioConfiguration.web && verdaccioConfiguration.web.title || 'verdaccio';
-
-    if (!verdaccioConfiguration.self_path) {
-      verdaccioConfiguration.self_path = path.resolve(configPathLocation);
-    }
-    if (!verdaccioConfiguration.https) {
-      verdaccioConfiguration.https = {enable: false};
-    }
-
-    logger.logger.warn({file: configPathLocation}, 'config file  - @{file}');
-
-    startVerdaccio(verdaccioConfiguration, cliListener, configPathLocation, pkgVersion, pkgName, listenDefaultCallback);
-  } catch (err) {
-    logger.logger.fatal({file: configPathLocation, err: err}, 'cannot open config file @{file}: @{!err.message}');
-    process.exit(1);
-  }
-}
+const fallbackConfig = commander.args.length == 1 && !commander.config;
+const isHelp = commander.args.length !== 0;
 
 if (commander.info) {
-  // eslint-disable-next-line no-console
-	console.log('\nEnvironment Info:');
-  (async () => {
-    const data = await envinfo.run({
-        System: ['OS', 'CPU'],
-        Binaries: ['Node', 'Yarn', 'npm'],
-        Virtualization: ['Docker'],
-        Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
-        npmGlobalPackages: ['verdaccio'],
-      });
-    // eslint-disable-next-line no-console
-    console.log(data);
-    process.exit(0);
-  })();
-} else  if (commander.args.length == 1 && !commander.config) {
+  infoCommand();
+} else  if (fallbackConfig) {
   // handling "verdaccio [config]" case if "-c" is missing in command line
   commander.config = commander.args.pop();
-  init();
-} else if (commander.args.length !== 0) {
+  initProgram(commander,  pkgVersion, pkgName);
+} else if (isHelp) {
   commander.help();
 } else {
-  init();
+  initProgram(commander,  pkgVersion, pkgName);
 }
 
 process.on('uncaughtException', function(err) {
   logger.logger.fatal( {
     err: err,
   },
-  'uncaught exception, please report this\n@{err.stack}' );
+  'uncaught exception, please report (https://github.com/verdaccio/verdaccio/issues) this: \n@{err.stack}' );
   process.exit(255);
 });

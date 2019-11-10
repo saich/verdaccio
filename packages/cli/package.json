@@ -1,9 +1,21 @@
 {
   "name": "@verdaccio/cli",
   "version": "4.4.0",
+  "author": "Juan Picado <juanpicado19@gmail.com>",
   "description": "verdaccio CLI",
+  "license": "MIT",
+  "homepage": "https://verdaccio.org",
   "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "commander": "3.0.2",
+    "semver": "6.3.0",
+    "envinfo": "7.4.0",
+    "kleur": "3.0.3",
+    "@verdaccio/node-api": "4.4.0",
+    "@verdaccio/config": "4.4.0",
+    "@verdaccio/utils": "4.4.0"
   }
 }

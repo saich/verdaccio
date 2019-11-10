@@ -126,4 +126,4 @@ const getOldDirectory = (): SetupDirectory => {
   };
 };
 
-export default findConfigFile;
+export { findConfigFile };

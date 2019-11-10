@@ -19,7 +19,7 @@ import { Config as IConfig, IPluginMiddleware, IPluginStorageFilter } from '@ver
 import { setup, logger } from '@verdaccio/logger';
 import { log, final, errorReportingMiddleware } from '@verdaccio/middleware';
 
-import hookDebug from '../../verdaccio/src/debug';
+import hookDebug from '../../api/src/debug';
 
 const defineAPI = function(config: IConfig, storage: IStorageHandler): any {
   const auth: IAuth = new Auth(config);

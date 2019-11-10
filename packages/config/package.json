@@ -6,9 +6,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "bunyan": "1.8.12"
-  },
   "devDependencies": {
     "@types/bunyan": "1.8.6"
   }
