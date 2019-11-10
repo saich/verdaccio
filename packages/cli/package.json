@@ -1,6 +1,6 @@
 {
   "name": "@verdaccio/cli",
-  "version": "4.3.5",
+  "version": "4.3.4",
   "author": "Juan Picado <juanpicado19@gmail.com>",
   "description": "verdaccio CLI",
   "license": "MIT",
@@ -14,8 +14,8 @@
     "semver": "6.3.0",
     "envinfo": "7.4.0",
     "kleur": "3.0.3",
-    "@verdaccio/node-api": "4.3.5",
-    "@verdaccio/config": "4.3.5",
-    "@verdaccio/utils": "4.3.5"
+    "@verdaccio/node-api": "4.3.4",
+    "@verdaccio/config": "4.3.4",
+    "@verdaccio/utils": "4.3.4"
   }
 }
