@@ -52,8 +52,10 @@ function createConfigFile(configLocation: any): SetupDirectory {
   return configLocation;
 }
 
-function readDefaultConfig(): string {
-  return fs.readFileSync(require.resolve('../conf/default.yaml'), CHARACTER_ENCODING.UTF8);
+function readDefaultConfig(): Buffer {
+  const pathDefaultConf: string = require.resolve('../conf/default.yaml');
+
+  return fs.readFileSync(pathDefaultConf, CHARACTER_ENCODING.UTF8);
 }
 
 function createConfigFolder(configLocation): void {
